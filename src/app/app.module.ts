@@ -5,23 +5,29 @@ import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 /* new form imports */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import{RentalCreateComponent} from './rental/rental-create.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    RentalCreateComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AmplifyAuthenticatorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

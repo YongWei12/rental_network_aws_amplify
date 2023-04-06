@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-container">
+    <button routerLink="/">Back</button>
+    <h2>Create a rental listing</h2>
+    <form [formGroup]="createForm" (ngSubmit)="onCreate(createForm.value)">
+      <div class="form-group">
+        <label for="rentalType">Rental Type</label>
+        <select id="rentalType" formControlName="rentalType" required>
+          <option [value]="type" *ngFor="let type of rentalTypes">{{ type }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" formControlName="title" type="text" required />
+      </div>
+
+      <div class="form-group">
+        <label for="photo">Photo URL</label>
+        <input id="photo" formControlName="photo" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label for="pricePerMonth">Price per month</label>
+        <input id="pricePerMonth" formControlName="pricePerMonth" type="number" step="0.01" required />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="!createForm.valid">Create Rental</button>
+    </form>
+  </div>
+</div>

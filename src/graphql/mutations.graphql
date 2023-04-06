@@ -38,3 +38,48 @@ mutation DeleteRestaurant(
     updatedAt
   }
 }
+mutation CreateRental(
+  $input: CreateRentalInput!
+  $condition: ModelRentalConditionInput
+) {
+  createRental(input: $input, condition: $condition) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateRental(
+  $input: UpdateRentalInput!
+  $condition: ModelRentalConditionInput
+) {
+  updateRental(input: $input, condition: $condition) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteRental(
+  $input: DeleteRentalInput!
+  $condition: ModelRentalConditionInput
+) {
+  deleteRental(input: $input, condition: $condition) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}

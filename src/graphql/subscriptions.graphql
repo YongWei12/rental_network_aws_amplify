@@ -35,3 +35,39 @@ subscription OnDeleteRestaurant(
     updatedAt
   }
 }
+subscription OnCreateRental($filter: ModelSubscriptionRentalFilterInput) {
+  onCreateRental(filter: $filter) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateRental($filter: ModelSubscriptionRentalFilterInput) {
+  onUpdateRental(filter: $filter) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteRental($filter: ModelSubscriptionRentalFilterInput) {
+  onDeleteRental(filter: $filter) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}

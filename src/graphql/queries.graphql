@@ -26,3 +26,34 @@ query ListRestaurants(
     nextToken
   }
 }
+query GetRental($id: ID!) {
+  getRental(id: $id) {
+    id
+    rentalType
+    title
+    photo
+    pricePerMonth
+    description
+    createdAt
+    updatedAt
+  }
+}
+query ListRentals(
+  $filter: ModelRentalFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRentals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      rentalType
+      title
+      photo
+      pricePerMonth
+      description
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
