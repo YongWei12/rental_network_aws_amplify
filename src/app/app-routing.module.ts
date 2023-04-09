@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RentalCreateComponent } from './rental/rental-create.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { RentalListComponent } from './rental-list/rental-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'create-rental', component: RentalCreateComponent },
+  { path: 'rentals', component: RentalListComponent }
 ];
 
 @NgModule({

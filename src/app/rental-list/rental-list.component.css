@@ -1,0 +1,19 @@
+.rental-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .rental-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .rental-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  

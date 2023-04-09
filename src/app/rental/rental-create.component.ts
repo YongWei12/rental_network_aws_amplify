@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  graphqlOperation } from 'aws-amplify';
 import { APIService, RentalType } from '../API.service';
 import { ZenObservable } from 'zen-observable-ts';
+import { Storage, Auth } from 'aws-amplify';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-rental-create',
@@ -16,12 +18,12 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   
   public rentalTypes = Object.values(RentalType);
 
+  private selectedFile: File | null = null;
 
   constructor(private api: APIService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
       rentalType: ['', Validators.required],
       title: ['', Validators.required],
-      photo: [''],
       pricePerMonth: ['', Validators.required],
       description: ['', Validators.required]
     });
@@ -31,7 +33,28 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
     // ... subscribe to new rentals being created (if required)
   }
 
-  public onCreate(rentalData: any) {
+  async onCreate(rentalData: any) {
+    const user = await Auth.currentAuthenticatedUser();
+    const ownerId = user.attributes.sub;
+    console.log("creating owner ID:  " + ownerId)
+    console.log("create rental: "+ rentalData);
+    if (this.selectedFile) {
+      const uniqueFilename = uuidv4() + '-' + this.selectedFile.name;
+
+      try {
+        const result = await Storage.put(uniqueFilename, this.selectedFile, {
+          contentType: this.selectedFile.type,
+        });
+
+        rentalData.photo = (result as any).key;
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        return;
+      }
+    }
+
+
+
     this.api
       .CreateRental(rentalData)
       .then((event) => {
@@ -49,4 +72,9 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
     }
     this.subscription = null;
   }
+
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
+
 }

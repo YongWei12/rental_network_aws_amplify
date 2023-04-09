@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import{RentalCreateComponent} from './rental/rental-create.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { RentalListComponent } from './rental-list/rental-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     RestaurantsComponent,
     RentalCreateComponent,
-    HomePageComponent
+    HomePageComponent,
+    RentalListComponent
   ],
   imports: [
     BrowserModule,

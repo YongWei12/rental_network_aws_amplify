@@ -1,0 +1,9 @@
+<div class="rental-grid">
+    <div *ngFor="let rental of rentals" class="rental-card">
+      <img *ngIf="rental.photo && signedPhotoUrls[rental.id]" [src]="signedPhotoUrls[rental.id]" alt="{{ rental.title }}" />
+      <h3>{{ rental.title }}</h3>
+      <p>{{ rental.description }}</p>
+      <p>{{ rental.pricePerMonth | currency }}</p>
+    </div>
+  </div>
+  
