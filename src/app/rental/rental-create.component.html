@@ -1,53 +1,155 @@
-<mat-card fxFlex="45" class="image-upload">
-  <h2>Select Photos</h2>
-  <div class="image-input">
-    <input type="file" (change)="onFilesSelected($event)" multiple />
-  </div>
-  <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10px" class="image-grid">
+<!-- <div class="rental-grid">
+    <div *ngFor="let rental of rentals" class="rental-card">
+      <img *ngIf="rental.photo && signedPhotoUrls[rental.id]" [src]="signedPhotoUrls[rental.id]" alt="{{ rental.title }}" />
+      <h3>{{ rental.title }}</h3>
+      <p>{{ rental.description }}</p>
+      <p>{{ rental.pricePerMonth | currency }}</p>
+    </div>
+  </div> -->
 
-    <mat-grid-tile *ngFor="let img of selectedImages; index as i">
-      <img [src]="img" class="center-crop" />
-    </mat-grid-tile>
-  </mat-grid-list>
-</mat-card>
-<div class="container">
-  <div class="form-container">
-    <button routerLink="/">Back</button>
-    <h2>Create a rental listing</h2>
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+  
+  <!-- Start header section -->
+  <header id="aa-header">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-header-area">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-left">
+                  <div class="aa-telephone-no">
+                    <span class="fa fa-phone"></span>
+                    1-***-***-***
+                  </div>
+                  <div class="aa-email hidden-xs">
+                    <span class="fa fa-envelope-o"></span> ****@gmail.com
+                  </div>
+                </div>              
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-right">
+                  <a href="#" class="aa-register">Register</a>
+                  <a href="#" class="aa-login">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End header section -->
+  
+
+  <!-- Start menu section -->
+  <section id="aa-menu-area">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->                                               
+          <!-- Text based logo -->
+           <a class="navbar-brand aa-logo" href="#"> Home <span>Property</span></a>
+           
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
+            <li class="active"><a href="#">HOME</a></li>
+             <!-- <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROPERTIES <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">                
+                <li><a href="#">PROPERTIES</a></li>
+                <li><a href="#">PROPERTIES DETAIL</a></li>                                            
+              </ul>
+            </li>
+            <li><a href="#">GALLERY</a></li>                                         
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">BLOG <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">                
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">BLOG DETAILS</a></li>                                            
+              </ul>
+            </li> -->
+            <li><a routerLink="/create-rental">Create Rental</a></li>
+           <li><a routerLink="/rentals">Rentals</a></li>
+           <li><a routerLink="/rentals">Rentals</a></li>
+           <!-- <li><a href="#" (click)="signOut()">Sign Out</a></li>li> -->
+          </ul>                            
+        </div><!--/.nav-collapse -->       
+      </div>          
+    </nav> 
+  </section>
+  <!-- End menu section -->
+
+
+
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-card fxFlex="45" class="image-upload">
+    <div class="select-photos-wrapper">
+      <h2>Select Photos</h2>
+      <div class="image-input">
+        <input type="file" (change)="onFilesSelected($event)" multiple />
+      </div>
+    </div>
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10px" class="image-grid">
+      <mat-grid-tile *ngFor="let img of selectedImages; index as i">
+        <img [src]="img" class="center-crop" />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
+
+<mat-card fxFlex="45">
+  <h2>Product Details</h2>
     <form [formGroup]="createForm" (ngSubmit)="onCreate(createForm.value)">
-      <div class="form-group">
+      
+      
+      <!-- <div class="form-group">
         <label for="rentalType">Rental Type</label>
         <select id="rentalType" formControlName="rentalType" required>
           <option [value]="type" *ngFor="let type of rentalTypes">{{ type }}</option>
         </select>
-      </div>
-
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input id="title" formControlName="title" type="text" required />
-      </div>
-
-      <!-- <div class="form-group">
-        <label for="photo">Photo URL</label>
-        <input id="photo" formControlName="photo" type="text" />
       </div> -->
 
-      <div class="form-group">
-        <label for="pricePerMonth">Price per month</label>
-        <input id="pricePerMonth" formControlName="pricePerMonth" type="number" step="0.01" required />
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" required></textarea>
-      </div>
-        <!-- Add the file input field -->
-      <!-- <div>
-        <label for="photo">Photo:</label>
-        <input type="file" id="photo" (change)="onFileSelected($event)">
-      </div> -->
-
-      <button type="submit" class="submit-btn" [disabled]="!createForm.valid">Create Rental</button>
-    </form>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" required />
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="Rental Type" formControlName="rentalType" required>
+            <mat-option [value]="type" *ngFor="let type of rentalTypes">{{ type }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput type="number" placeholder="Price per Month" formControlName="pricePerMonth" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Bed Size" formControlName="noBeds" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Room Size" formControlName="noRooms" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput type="number" placeholder="Number of Bathrooms" formControlName="noBaths" required />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="!createForm.valid">Submit</button>
+      </form>
+    </mat-card>
   </div>
-</div>

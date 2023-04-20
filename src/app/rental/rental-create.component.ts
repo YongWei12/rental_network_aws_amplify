@@ -26,7 +26,10 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
       rentalType: ['', Validators.required],
       title: ['', Validators.required],
       pricePerMonth: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      noBaths: ['', Validators.required],
+      noBeds: ['', Validators.required],
+      noRooms: ['', Validators.required]
     });
   }
 
