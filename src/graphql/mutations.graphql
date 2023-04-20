@@ -49,6 +49,10 @@ mutation CreateRental(
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }
@@ -64,6 +68,10 @@ mutation UpdateRental(
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }
@@ -79,6 +87,10 @@ mutation DeleteRental(
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }

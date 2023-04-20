@@ -43,6 +43,10 @@ subscription OnCreateRental($filter: ModelSubscriptionRentalFilterInput) {
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }
@@ -55,6 +59,10 @@ subscription OnUpdateRental($filter: ModelSubscriptionRentalFilterInput) {
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }
@@ -67,6 +75,10 @@ subscription OnDeleteRental($filter: ModelSubscriptionRentalFilterInput) {
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }

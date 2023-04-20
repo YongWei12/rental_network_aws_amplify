@@ -34,6 +34,10 @@ query GetRental($id: ID!) {
     photo
     pricePerMonth
     description
+    noRooms
+    noBeds
+    noBaths
+    saleStatus
     createdAt
     updatedAt
   }
@@ -51,6 +55,10 @@ query ListRentals(
       photo
       pricePerMonth
       description
+      noRooms
+      noBeds
+      noBaths
+      saleStatus
       createdAt
       updatedAt
     }

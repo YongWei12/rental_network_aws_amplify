@@ -101,6 +101,10 @@ export type CreateRentalInput = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
 };
 
 export enum RentalType {
@@ -117,6 +121,10 @@ export type ModelRentalConditionInput = {
   photo?: ModelStringInput | null;
   pricePerMonth?: ModelFloatInput | null;
   description?: ModelStringInput | null;
+  noRooms?: ModelFloatInput | null;
+  noBeds?: ModelFloatInput | null;
+  noBaths?: ModelFloatInput | null;
+  saleStatus?: ModelStringInput | null;
   and?: Array<ModelRentalConditionInput | null> | null;
   or?: Array<ModelRentalConditionInput | null> | null;
   not?: ModelRentalConditionInput | null;
@@ -147,6 +155,10 @@ export type Rental = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -158,6 +170,10 @@ export type UpdateRentalInput = {
   photo?: string | null;
   pricePerMonth?: number | null;
   description?: string | null;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
 };
 
 export type DeleteRentalInput = {
@@ -203,6 +219,10 @@ export type ModelRentalFilterInput = {
   photo?: ModelStringInput | null;
   pricePerMonth?: ModelFloatInput | null;
   description?: ModelStringInput | null;
+  noRooms?: ModelFloatInput | null;
+  noBeds?: ModelFloatInput | null;
+  noBaths?: ModelFloatInput | null;
+  saleStatus?: ModelStringInput | null;
   and?: Array<ModelRentalFilterInput | null> | null;
   or?: Array<ModelRentalFilterInput | null> | null;
   not?: ModelRentalFilterInput | null;
@@ -260,6 +280,10 @@ export type ModelSubscriptionRentalFilterInput = {
   photo?: ModelSubscriptionStringInput | null;
   pricePerMonth?: ModelSubscriptionFloatInput | null;
   description?: ModelSubscriptionStringInput | null;
+  noRooms?: ModelSubscriptionFloatInput | null;
+  noBeds?: ModelSubscriptionFloatInput | null;
+  noBaths?: ModelSubscriptionFloatInput | null;
+  saleStatus?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionRentalFilterInput | null> | null;
   or?: Array<ModelSubscriptionRentalFilterInput | null> | null;
 };
@@ -314,6 +338,10 @@ export type CreateRentalMutation = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -326,6 +354,10 @@ export type UpdateRentalMutation = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -338,6 +370,10 @@ export type DeleteRentalMutation = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -374,6 +410,10 @@ export type GetRentalQuery = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -388,6 +428,10 @@ export type ListRentalsQuery = {
     photo?: string | null;
     pricePerMonth: number;
     description: string;
+    noRooms?: number | null;
+    noBeds?: number | null;
+    noBaths?: number | null;
+    saleStatus?: string | null;
     createdAt: string;
     updatedAt: string;
   } | null>;
@@ -432,6 +476,10 @@ export type OnCreateRentalSubscription = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -444,6 +492,10 @@ export type OnUpdateRentalSubscription = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -456,6 +508,10 @@ export type OnDeleteRentalSubscription = {
   photo?: string | null;
   pricePerMonth: number;
   description: string;
+  noRooms?: number | null;
+  noBeds?: number | null;
+  noBaths?: number | null;
+  saleStatus?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -555,6 +611,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -583,6 +643,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -611,6 +675,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -691,6 +759,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -719,6 +791,10 @@ export class APIService {
             photo
             pricePerMonth
             description
+            noRooms
+            noBeds
+            noBaths
+            saleStatus
             createdAt
             updatedAt
           }
@@ -835,6 +911,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -864,6 +944,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
@@ -893,6 +977,10 @@ export class APIService {
           photo
           pricePerMonth
           description
+          noRooms
+          noBeds
+          noBaths
+          saleStatus
           createdAt
           updatedAt
         }
