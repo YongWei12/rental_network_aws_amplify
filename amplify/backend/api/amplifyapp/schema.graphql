@@ -13,7 +13,7 @@ type Rental @model {
   id: ID!
   rentalType: RentalType!
   title: String!
-  photo: String
+  photo: [String]
   pricePerMonth: Float!
   description: String!
   noRooms: Float

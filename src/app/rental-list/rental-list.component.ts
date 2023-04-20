@@ -26,8 +26,10 @@ export class RentalListComponent implements OnInit {
       console.log("results  " + result)
       this.rentals =  result.items as Rental[]
       for (const rental of this.rentals) {
-        if (rental.photo) {
-          this.signedPhotoUrls[rental.id] = await this.getSignedPhotoUrl(rental.photo);
+        if (rental.photo && Array.isArray(rental.photo) && rental.photo.length > 0) {
+          const photoKey = rental.photo[0] as string;
+          console.log(photoKey);
+          this.signedPhotoUrls[rental.id] = await this.getSignedPhotoUrl(photoKey);
         }
       }
     } catch (error) {

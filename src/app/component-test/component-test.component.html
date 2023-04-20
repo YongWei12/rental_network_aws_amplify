@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxFlex="45" class="image-upload">
+      <h2>Select Photos</h2>
+      <div class="image-input">
+        <input type="file" (change)="onImageSelect($event)" multiple />
+      </div>
+      <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10px" class="image-grid">
+
+        <mat-grid-tile *ngFor="let img of selectedImages; index as i">
+          <img [src]="img" class="center-crop" />
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
+  
+    <mat-card fxFlex="45">
+      <h2>Product Details</h2>
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Rental Type" formControlName="rentalType" required>
+              <mat-option value="apartment">Apartment</mat-option>
+              <mat-option value="house">House</mat-option>
+              <mat-option value="room">Room</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput type="number" placeholder="Price per Month" formControlName="pricePerMonth" required />
+          </mat-form-field>
+    
+          <mat-form-field>
+            <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput placeholder="Bed Size" formControlName="bedSize" required />
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput placeholder="Room Size" formControlName="roomSize" required />
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput type="number" placeholder="Number of Bathrooms" formControlName="numberOfBathrooms" required />
+          </mat-form-field>
+    
+          <button mat-raised-button color="primary" type="submit" [disabled]="productForm.invalid">Submit</button>
+        </form>
+      </mat-card>
+    </div>
+    

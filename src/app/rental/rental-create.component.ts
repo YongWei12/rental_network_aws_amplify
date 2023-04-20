@@ -18,7 +18,8 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   
   public rentalTypes = Object.values(RentalType);
 
-  private selectedFile: File | null = null;
+  selectedFiles: File[] = [];
+  selectedImages: string[] = [];
 
   constructor(private api: APIService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
@@ -36,23 +37,29 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   async onCreate(rentalData: any) {
     const user = await Auth.currentAuthenticatedUser();
     const ownerId = user.attributes.sub;
-    console.log("creating owner ID:  " + ownerId)
-    console.log("create rental: "+ rentalData);
-    if (this.selectedFile) {
-      const uniqueFilename = uuidv4() + '-' + this.selectedFile.name;
-
-      try {
-        const result = await Storage.put(uniqueFilename, this.selectedFile, {
-          contentType: this.selectedFile.type,
-        });
-
-        rentalData.photo = (result as any).key;
-      } catch (error) {
-        console.error('Error uploading file:', error);
-        return;
+    console.log("creating owner ID:  " + ownerId);
+    console.log("create rental: " + rentalData);
+  
+    const uploadedPhotoKeys = [];
+  
+    if (this.selectedFiles.length > 0) {
+      for (const file of this.selectedFiles) {
+        const uniqueFilename = uuidv4() + '-' + file.name;
+  
+        try {
+          const result = await Storage.put(uniqueFilename, file, {
+            contentType: file.type,
+          });
+  
+          uploadedPhotoKeys.push((result as any).key);
+        } catch (error) {
+          console.error('Error uploading file:', error);
+          return;
+        }
       }
     }
-
+  
+    rentalData.photo = uploadedPhotoKeys;
 
 
     this.api
@@ -73,8 +80,20 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
     this.subscription = null;
   }
 
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+  onFilesSelected(event: any) {
+    this.selectedFiles = Array.from(event.target.files);
+
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.selectedImages.push(reader.result as string);
+        };
+      }
+    }
   }
 
 }

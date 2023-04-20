@@ -98,7 +98,7 @@ export type CreateRentalInput = {
   id?: string | null;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -152,7 +152,7 @@ export type Rental = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -167,7 +167,7 @@ export type UpdateRentalInput = {
   id: string;
   rentalType?: RentalType | null;
   title?: string | null;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth?: number | null;
   description?: string | null;
   noRooms?: number | null;
@@ -335,7 +335,7 @@ export type CreateRentalMutation = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -351,7 +351,7 @@ export type UpdateRentalMutation = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -367,7 +367,7 @@ export type DeleteRentalMutation = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -407,7 +407,7 @@ export type GetRentalQuery = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -425,7 +425,7 @@ export type ListRentalsQuery = {
     id: string;
     rentalType: RentalType;
     title: string;
-    photo?: string | null;
+    photo?: Array<string | null> | null;
     pricePerMonth: number;
     description: string;
     noRooms?: number | null;
@@ -473,7 +473,7 @@ export type OnCreateRentalSubscription = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -489,7 +489,7 @@ export type OnUpdateRentalSubscription = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
@@ -505,7 +505,7 @@ export type OnDeleteRentalSubscription = {
   id: string;
   rentalType: RentalType;
   title: string;
-  photo?: string | null;
+  photo?: Array<string | null> | null;
   pricePerMonth: number;
   description: string;
   noRooms?: number | null;
