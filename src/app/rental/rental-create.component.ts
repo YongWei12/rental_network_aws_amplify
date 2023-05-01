@@ -64,7 +64,7 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   
     rentalData.photo = uploadedPhotoKeys;
 
-
+    rentalData.username = ownerId;
     this.api
       .CreateRental(rentalData)
       .then((event) => {

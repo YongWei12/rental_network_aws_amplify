@@ -16,6 +16,7 @@ type Rental @model @auth(rules: [{allow: public}]) {
   noBeds: Float
   noBaths: Float
   saleStatus: String
+  username: String
 }
 
 enum RentalType {

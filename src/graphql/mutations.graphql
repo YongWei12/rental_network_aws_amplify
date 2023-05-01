@@ -53,6 +53,7 @@ mutation CreateRental(
     noBeds
     noBaths
     saleStatus
+    username
     createdAt
     updatedAt
   }
@@ -72,6 +73,7 @@ mutation UpdateRental(
     noBeds
     noBaths
     saleStatus
+    username
     createdAt
     updatedAt
   }
@@ -91,6 +93,7 @@ mutation DeleteRental(
     noBeds
     noBaths
     saleStatus
+    username
     createdAt
     updatedAt
   }

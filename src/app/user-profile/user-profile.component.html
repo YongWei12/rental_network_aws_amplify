@@ -12,7 +12,7 @@
   <!-- END SCROLL TOP BUTTON -->
   
   <!-- Start header section -->
-  <header id="aa-header">  
+  <!-- <header id="aa-header">  
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -20,11 +20,11 @@
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-left">
-                  <div class="aa-telephone-no">
+                  <div class="aa-telephone-no" *ngIf="userType === 'A'">
                     <span class="fa fa-phone"></span>
                     1-***-***-***
                   </div>
-                  <div class="aa-email hidden-xs">
+                  <div class="aa-email hidden-xs" *ngIf="userType === 'A'">
                     <span class="fa fa-envelope-o"></span> ****@gmail.com
                   </div>
                 </div>              
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
   <!-- End header section -->
   
 
@@ -63,7 +63,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">HOME</a></li>
              <!-- <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROPERTIES <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">                
@@ -80,11 +80,10 @@
               </ul>
             </li> -->
             <li><a routerLink="/create-rental">Create Rental</a></li>
-           <li><a routerLink="/rentals">Rentals</a></li>
+           <li class="active"><a routerLink="/rentals">Rentals</a></li>
            <!-- <li><a routerLink="/rentals">Rentals</a></li> -->
-           <!-- <li><a href="#" (click)="signOut()">Sign Out</a></li>li> -->
+           <!-- <li><a href="#" (click)="signOut()">Sign Out</a></li> -->
            <li><a routerLink="/user-profile">Profile</a></li>
-
           </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          
@@ -92,66 +91,24 @@
   </section>
   <!-- End menu section -->
 
+<!-- user.component.html -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="user-profile">
+    <h1>{{userName}}  </h1>
+    <p>{{email}}</p>
+  
+    <p>My Listing</p>
 
-
-<div fxLayout="row" fxLayoutAlign="start center">
-  <mat-card fxFlex="45" class="image-upload">
-    <div class="select-photos-wrapper">
-      <h2>Select Photos</h2>
-      <div class="image-input">
-        <input type="file" (change)="onFilesSelected($event)" multiple />
+    <div class="rental-units">
+      <div class="rental-unit " *ngFor="let rental of rentals"> 
+        <img *ngIf="rental.photo && signedPhotoUrls[rental.id]" [src]="signedPhotoUrls[rental.id]" alt="{{ rental.title }}" />
+        <p>{{rental.title}}</p>
       </div>
     </div>
-    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10px" class="image-grid">
-      <mat-grid-tile *ngFor="let img of selectedImages; index as i">
-        <img [src]="img" class="center-crop" />
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-card>
-
-
-<mat-card fxFlex="45">
-  <h2>Product Details</h2>
-    <form [formGroup]="createForm" (ngSubmit)="onCreate(createForm.value)">
-      
-      
-      <!-- <div class="form-group">
-        <label for="rentalType">Rental Type</label>
-        <select id="rentalType" formControlName="rentalType" required>
-          <option [value]="type" *ngFor="let type of rentalTypes">{{ type }}</option>
-        </select>
-      </div> -->
-
-      <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title" required />
-      </mat-form-field>
-      <mat-form-field>
-          <mat-select placeholder="Rental Type" formControlName="rentalType" required>
-            <mat-option [value]="type" *ngFor="let type of rentalTypes">{{ type }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field>
-          <input matInput type="number" placeholder="Price per Month" formControlName="pricePerMonth" required />
-        </mat-form-field>
-  
-        <mat-form-field>
-          <textarea matInput placeholder="Description" formControlName="description" required></textarea>
-        </mat-form-field>
-  
-        <mat-form-field>
-          <input matInput placeholder="Bed Size" formControlName="noBeds" required />
-        </mat-form-field>
-  
-        <mat-form-field>
-          <input matInput placeholder="Room Size" formControlName="noRooms" required />
-        </mat-form-field>
-  
-        <mat-form-field>
-          <input matInput type="number" placeholder="Number of Bathrooms" formControlName="noBaths" required />
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" type="submit" [disabled]="!createForm.valid">Submit</button>
-      </form>
-    </mat-card>
   </div>
+  

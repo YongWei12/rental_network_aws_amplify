@@ -34,6 +34,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
 import { RentalListDetailsComponent } from './rental-list/rental-list-details/rental-list-details.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { RentalListDetailsComponent } from './rental-list/rental-list-details/re
     ComponentTestComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    RentalListDetailsComponent
+    RentalListDetailsComponent,
+    AuthenticationComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
