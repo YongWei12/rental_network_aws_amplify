@@ -12,7 +12,7 @@
   <!-- END SCROLL TOP BUTTON -->
   
   <!-- Start header section -->
-  <header id="aa-header">  
+  <!-- <header id="aa-header">  
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -20,11 +20,11 @@
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-left">
-                  <div class="aa-telephone-no">
+                  <div class="aa-telephone-no" *ngIf="userType === 'A'">
                     <span class="fa fa-phone"></span>
                     1-***-***-***
                   </div>
-                  <div class="aa-email hidden-xs">
+                  <div class="aa-email hidden-xs" *ngIf="userType === 'A'">
                     <span class="fa fa-envelope-o"></span> ****@gmail.com
                   </div>
                 </div>              
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
   <!-- End header section -->
   
 
@@ -63,7 +63,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">HOME</a></li>
              <!-- <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROPERTIES <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">                
@@ -80,9 +80,9 @@
               </ul>
             </li> -->
             <li><a routerLink="/create-rental">Create Rental</a></li>
-           <li><a routerLink="/rentals">Rentals</a></li>
-           <li><a routerLink="/rentals">Rentals</a></li>
-           <!-- <li><a href="#" (click)="signOut()">Sign Out</a></li>li> -->
+           <li class="active"><a routerLink="/rentals">Rentals</a></li>
+           <!-- <li><a routerLink="/rentals">Rentals</a></li> -->
+           <li><a href="#" (click)="signOut()">Sign Out</a></li>
           </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          
@@ -125,7 +125,7 @@
                   <span class="aa-price">
                     {{ rental.pricePerMonth | currency }}
                   </span>
-                  <a href="#" class="aa-secondary-btn">View Details</a>
+                  <a class="aa-secondary-btn" (click)="viewFlatDetails(rental.id)">View Details</a>
                 </div>
               </div>
             </article>

@@ -1,0 +1,89 @@
+<!-- <p>login-page works!</p> -->
+<div class="card">
+    <div class="card-header">
+        <span style="font-size: xx-large;">Registration</span>
+    </div>
+    <div class="card-body" style="margin-top: 1rem;">
+        <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+            <div class="mb-3">
+                <label class="form-label" style="font-size: larger;">Username</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">First Name</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">Last Name</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">NRIC</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">Date Of Birth</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">Password</label><br>
+                <input type="text" />
+                <!-- <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div> -->
+            </div>
+
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">Confirm Password</label><br>
+                <input type="text" />
+                <!-- <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div> -->
+            </div>
+            
+            <div class="mb-3" style="margin-top:1rem">
+                <label class="form-label" style="font-size: larger;">Email</label><br>
+                <input type="text"/>
+                <!-- <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button class="btn btn-primary" (click)="confirmRegister()">
+                    <span class="spinner-border spinner-border-sm me-1"></span>Register
+                </button>
+                <!-- <a class="btn btn-link" (click)="register()">Register</a> -->
+                <!-- <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                    Login
+                </button>
+                <a routerLink="../register" class="btn btn-link">Register</a> -->
+            </div>
+        <!-- </form> -->
+    </div>
+</div>

@@ -19,19 +19,19 @@
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-left">
-                  <div class="aa-telephone-no">
+                  <div class="aa-telephone-no" *ngIf="userType === 'A'">
                     <span class="fa fa-phone"></span>
                     1-***-***-***
                   </div>
-                  <div class="aa-email hidden-xs">
+                  <div class="aa-email hidden-xs" *ngIf="userType === 'A'">
                     <span class="fa fa-envelope-o"></span> ****@gmail.com
                   </div>
                 </div>              
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
-                  <a href="#" class="aa-register">Register</a>
-                  <a href="#" class="aa-login">Login</a>
+                  <a href="#" class="aa-register" (click)="registerFrmNav()">Register</a>
+                  <a href="#" class="aa-login" (click)="loginDialog()">Login</a>
                 </div>
               </div>
             </div>
@@ -77,11 +77,16 @@
                 <li><a href="#">BLOG DETAILS</a></li>                                            
               </ul>
             </li> -->
-            <li><a routerLink="/create-rental">Create Rental</a></li>
+            <li *ngIf="userType !== 'A'">
+              <a routerLink="/" (click)="nonAuth()">Create Rental</a>
+            </li>
+            <li *ngIf="userType === 'A'">
+              <a routerLink="/create-rental">Create Rental</a>
+            </li>
            <li><a routerLink="/rentals">Rentals</a></li>
-           <li><a routerLink="/rentals">Rentals</a></li>
-           <li><a routerLink="/component-test">Rentals</a></li>
-           <li><a href="#" (click)="signOut()">Sign Out</a></li>li>
+           <!-- <li><a routerLink="/rentals">Rentals</a></li> -->
+           <!-- <li><a routerLink="/component-test">Rentals</a></li> -->
+           <li><a href="#" (click)="signOut()">Sign Out</a></li>
           </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          
@@ -980,4 +985,16 @@
     </div>
   </footer>
   <!-- / Footer -->
+
+  <p-toast [baseZIndex]="5000" [preventOpenDuplicates]="true">
+    <ng-template let-message pTemplate="message">
+      <!-- <div class="mr-3">
+        <i [ngClass]="message.severity == 'success' ? 'fa-check-circle success-icon' : message.severity == 'error' ? 'fa-exclamation-circle fail-icon' : 'fa-solid fa-circle-info info-icon' " class="fas fa-check-circle fa-lg mt-1"></i>
+      </div> -->
+      <div class="w-full">
+        <div class="text-lg">{{message.summary}}</div>
+        <div class="text-lg">{{message.detail}}</div>
+      </div>
+    </ng-template>
+  </p-toast>
   
