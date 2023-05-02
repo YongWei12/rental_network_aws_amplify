@@ -1,0 +1,35 @@
+<div class="aa-latest-properties-content">
+    <div class="row">
+      <div *ngFor="let rental of displayRental" >
+      <div class="col-md-4">
+        <article class="aa-properties-item">
+          <a href="#" class="aa-properties-item-img">
+            <img *ngIf="rental.photo && signedPhotoUrls[rental.id]" [src]="signedPhotoUrls[rental.id]" alt="{{ rental.title }}" />
+          </a>
+          <!-- <div class="aa-tag for-sale">
+            For Sale
+          </div> -->
+          <div class="aa-properties-item-content">
+            <div class="aa-properties-info">
+              <span>5 Rooms</span>
+              <span>2 Beds</span>
+              <span>3 Baths</span>
+              <span>1100 SQ FT</span>
+            </div>
+            <div class="aa-properties-about">
+              <h3><a href="#">{{ rental.title }}</a></h3>
+              <p>{{ rental.description }}</p>                      
+            </div>
+            <div class="aa-properties-detial">
+              <span class="aa-price">
+                {{ rental.pricePerMonth | currency }}
+              </span>
+              <a class="aa-secondary-btn" (click)="booking()">Click To Book</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    
+    </div>
+  </div>
+  </div>

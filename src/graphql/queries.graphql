@@ -38,6 +38,7 @@ query GetRental($id: ID!) {
     noBeds
     noBaths
     saleStatus
+    username
     createdAt
     updatedAt
   }
@@ -59,6 +60,7 @@ query ListRentals(
       noBeds
       noBaths
       saleStatus
+      username
       createdAt
       updatedAt
     }

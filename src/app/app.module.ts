@@ -26,6 +26,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { MessageService } from 'primeng/api';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ToastModule } from 'primeng/toast';
+import { RentalListDetailsComponent } from './rental-list/rental-list-details/rental-list-details.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ProductDescriptionComponent } from './product-description/product-description.component';
 
 
 @NgModule({
@@ -35,7 +46,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
     RentalCreateComponent,
     HomePageComponent,
     RentalListComponent,
-    ComponentTestComponent
+    ComponentTestComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    RentalListDetailsComponent,
+    AuthenticationComponent,
+    UserProfileComponent,
+    ProductDescriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +69,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MessagesModule,
+    MessageModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [DialogService,MessageService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

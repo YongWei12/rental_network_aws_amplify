@@ -105,6 +105,7 @@ export type CreateRentalInput = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
 };
 
 export enum RentalType {
@@ -125,6 +126,7 @@ export type ModelRentalConditionInput = {
   noBeds?: ModelFloatInput | null;
   noBaths?: ModelFloatInput | null;
   saleStatus?: ModelStringInput | null;
+  username?: ModelStringInput | null;
   and?: Array<ModelRentalConditionInput | null> | null;
   or?: Array<ModelRentalConditionInput | null> | null;
   not?: ModelRentalConditionInput | null;
@@ -159,6 +161,7 @@ export type Rental = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -174,6 +177,7 @@ export type UpdateRentalInput = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
 };
 
 export type DeleteRentalInput = {
@@ -223,6 +227,7 @@ export type ModelRentalFilterInput = {
   noBeds?: ModelFloatInput | null;
   noBaths?: ModelFloatInput | null;
   saleStatus?: ModelStringInput | null;
+  username?: ModelStringInput | null;
   and?: Array<ModelRentalFilterInput | null> | null;
   or?: Array<ModelRentalFilterInput | null> | null;
   not?: ModelRentalFilterInput | null;
@@ -284,6 +289,7 @@ export type ModelSubscriptionRentalFilterInput = {
   noBeds?: ModelSubscriptionFloatInput | null;
   noBaths?: ModelSubscriptionFloatInput | null;
   saleStatus?: ModelSubscriptionStringInput | null;
+  username?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionRentalFilterInput | null> | null;
   or?: Array<ModelSubscriptionRentalFilterInput | null> | null;
 };
@@ -342,6 +348,7 @@ export type CreateRentalMutation = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -358,6 +365,7 @@ export type UpdateRentalMutation = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -374,6 +382,7 @@ export type DeleteRentalMutation = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -414,6 +423,7 @@ export type GetRentalQuery = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -432,6 +442,7 @@ export type ListRentalsQuery = {
     noBeds?: number | null;
     noBaths?: number | null;
     saleStatus?: string | null;
+    username?: string | null;
     createdAt: string;
     updatedAt: string;
   } | null>;
@@ -480,6 +491,7 @@ export type OnCreateRentalSubscription = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -496,6 +508,7 @@ export type OnUpdateRentalSubscription = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -512,6 +525,7 @@ export type OnDeleteRentalSubscription = {
   noBeds?: number | null;
   noBaths?: number | null;
   saleStatus?: string | null;
+  username?: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -615,6 +629,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -647,6 +662,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -679,6 +695,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -763,6 +780,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -795,6 +813,7 @@ export class APIService {
             noBeds
             noBaths
             saleStatus
+            username
             createdAt
             updatedAt
           }
@@ -915,6 +934,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -948,6 +968,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }
@@ -981,6 +1002,7 @@ export class APIService {
           noBeds
           noBaths
           saleStatus
+          username
           createdAt
           updatedAt
         }

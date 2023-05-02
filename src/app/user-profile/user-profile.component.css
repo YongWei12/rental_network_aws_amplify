@@ -1,0 +1,48 @@
+/* user.component.css */
+
+.user-profile {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .user-info {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .user-info h1 {
+    margin-bottom: 5px;
+  }
+  
+  .user-info p {
+    color: #888;
+    margin-top: 0;
+  }
+  
+  .rental-units {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .rental-unit {
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .rental-unit img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .rental-unit p {
+    padding: 10px;
+    margin: 0;
+  }
+  

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { APIService } from '../API.service';
 import { Rental } from '../API.service';
 import { Storage, Auth } from 'aws-amplify';
+import { DialogService } from 'primeng/dynamicdialog';
+import {Router } from '@angular/router';
+import { RentalListDetailsComponent } from './rental-list-details/rental-list-details.component';
 
 @Component({
   selector: 'app-rental-list',
@@ -9,9 +12,14 @@ import { Storage, Auth } from 'aws-amplify';
   styleUrls: ['./rental-list.component.css'],
 })
 export class RentalListComponent implements OnInit {
+
+  userType: 'A' | 'NA' = 'NA';  // autheticated / non autheticated user
+
   public rentals: Array<Rental> = [];
 
-  constructor(private api: APIService) {}
+  constructor(private api: APIService,
+    private dialogService: DialogService,
+    private router: Router) {}
 
 
   public signedPhotoUrls: { [key: string]: string } = {};
@@ -29,6 +37,7 @@ export class RentalListComponent implements OnInit {
         if (rental.photo && Array.isArray(rental.photo) && rental.photo.length > 0) {
           const photoKey = rental.photo[0] as string;
           console.log(photoKey);
+          console.log("rental id",rental.id);
           this.signedPhotoUrls[rental.id] = await this.getSignedPhotoUrl(photoKey);
         }
       }
@@ -46,4 +55,56 @@ export class RentalListComponent implements OnInit {
       return '';
     }
   }
+
+  async signOut() {
+    try {
+      await Auth.signOut();
+    } catch (error) {
+      console.log('Error signing out:', error);
+    }
+  }
+
+  viewFlatDetails(id: string): void {
+    console.log("view details");
+    console.log(id);
+    // this.getRentalDetails(id);
+    let rental = this.rentals.find(rental => rental.id === id);
+    console.log(rental);
+    //navigate to product details page 
+    let title = rental.title;
+    let description = rental.description;
+    let photoUrls = rental.photo;
+    let price = rental.pricePerMonth;
+    let availability = "available";
+    console.log("my photo url");
+    console.log(rental.photo);
+    // Convert photoUrls array to string
+    let photoUrl = photoUrls.join(',');
+    this.router.navigate([`/product-description/${title}/${description}/${photoUrl}/${price}/${availability}`]);
+
+    // const ref = this.dialogService.open(RentalListDetailsComponent, {
+    //   width: 'max-content',
+    //   height: 'max-content',
+    //   showHeader: false,
+    //   data: { data: id },
+    //   // contentStyle: { 'min-height': '500px', 'min-width': '500px' },
+    //   closable: true,
+    //   dismissableMask: true
+    // });
+  }
+
+  // getRentalDetails(id: string): Rental {
+  //   for (var rental of this.rentals) {
+  //     if(rental.id === id) {
+  //       console.log(rental);
+  //       var a: Array<Rental> = [];
+  //       a.push(rental)
+  //       return rental;
+  //     }
+  //     else {
+  //       var b: Array<Rental> = []
+  //       return ;
+  //     }
+  //   }
+  // }
 }
