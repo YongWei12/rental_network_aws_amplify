@@ -8,24 +8,3 @@ type Restaurant @model {
   description: String!
   city: String!
 }
-
-type Rental @model {
-  id: ID!
-  rentalType: RentalType!
-  title: String!
-  photo: [String]
-  pricePerMonth: Float!
-  description: String!
-  noRooms: Float
-  noBeds: Float
-  noBaths: Float
-  saleStatus: String
-}
-
-enum RentalType {
-  APARTMENT
-  ROOM
-  HOUSE
-  SHORT_TERM
-  SHORT_TERM_STAY
-}

@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "amplifyapp0b878c6a_identitypool_0b878c6a",
+    "identityPoolName": "therentalnetworkb801a8a7_identitypool_b801a8a7",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplif0b878c6a",
-    "userPoolName": "amplifyapp0b878c6a_userpool_0b878c6a",
+    "resourceNameTruncated": "therenb801a8a7",
+    "userPoolName": "therentalnetworkb801a8a7_userpool_b801a8a7",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "amplif0b878c6a_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "therenb801a8a7_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "0b878c6a",
-    "resourceName": "amplifyapp0b878c6a",
+    "sharedId": "b801a8a7",
+    "resourceName": "therentalnetworkb801a8a7",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],

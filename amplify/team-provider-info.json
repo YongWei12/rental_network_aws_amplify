@@ -1,4 +1,22 @@
 {
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-therentalnetwork-dev-213415-authRole",
+      "UnauthRoleArn": "arn:aws:iam::801316900882:role/amplify-therentalnetwork-dev-213415-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::801316900882:role/amplify-therentalnetwork-dev-213415-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-therentalnetwork-dev-213415-deployment",
+      "UnauthRoleName": "amplify-therentalnetwork-dev-213415-unauthRole",
+      "StackName": "amplify-therentalnetwork-dev-213415",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:801316900882:stack/amplify-therentalnetwork-dev-213415/93ccdd80-c591-11ed-a97e-0a8af8193260",
+      "AmplifyAppId": "dxn68mzr8z6w0"
+    },
+    "categories": {
+      "auth": {
+        "therentalnetworkb801a8a7": {}
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplifyapp-staging-44357-authRole",
