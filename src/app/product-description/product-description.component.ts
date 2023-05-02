@@ -18,6 +18,9 @@ export class ProductDescriptionComponent {
   availability: string;
   signedPhotoUrls: string[] = [];
 
+
+  loading: boolean = true; // Add this line
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -45,6 +48,7 @@ export class ProductDescriptionComponent {
         console.log("error getting picture ")
       }
     }
+    this.loading = false; // Add this line
   }
   
   async getSignedPhotoUrl(photoKey: string) {

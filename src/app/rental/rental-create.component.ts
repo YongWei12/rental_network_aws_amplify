@@ -18,6 +18,7 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   
   public rentalTypes = Object.values(RentalType);
 
+  selectedFile:  File[] = []
   selectedFiles: File[] = [];
   selectedImages: string[] = [];
 
@@ -84,8 +85,8 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
   }
 
   onFilesSelected(event: any) {
-    this.selectedFiles = Array.from(event.target.files);
-
+    this.selectedFile = ( Array.from(event.target.files));
+    this.selectedFiles.push(...this.selectedFile);
     const files = event.target.files;
     if (files && files.length > 0) {
       for (let i = 0; i < files.length; i++) {
@@ -97,6 +98,8 @@ export class RentalCreateComponent implements OnInit, OnDestroy {
         };
       }
     }
+    console.log(this.selectedFiles);
+    console.log(this.selectedImages)
   }
 
 }

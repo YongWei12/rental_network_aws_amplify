@@ -101,18 +101,18 @@
     <div class = "card-wrapper">
       <div class = "card">
         <!-- card left -->
-        <div class = "product-imgs" *ngFor="let photoUrl of signedPhotoUrls" >
+        <div class = "product-imgs" *ngIf="!loading" >
           <div class = "img-display">
             <div class = "img-showcase">
-              <img [src] = "photoUrl" alt = "shoe image">
+              <img *ngFor="let photoUrl of signedPhotoUrls" [src] = "photoUrl" alt = "shoe image">
               <!-- <img src = "shoes_images/shoe_3.jpg" alt = "shoe image">
               <img src = "shoes_images/shoe_4.jpg" alt = "shoe image"> -->
             </div>
           </div>
-          <div class = "img-select">
-            <div class = "img-item">
-              <a href = "#" data-id = "1">
-                <img [src] = "photoUrl" alt = "shoe image">
+          <div class="img-select">
+            <div class="img-item" *ngFor="let photoUrl of signedPhotoUrls; let i = index">
+              <a href="#" [attr.data-id]="i + 1">
+                <img [src]="photoUrl" alt="image">
               </a>
             </div>
             <!-- <div class = "img-item">
