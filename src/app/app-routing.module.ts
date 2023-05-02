@@ -13,7 +13,7 @@ import {ProductDescriptionComponent} from './product-description/product-descrip
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'create-rental', component: RentalCreateComponent,  canActivate: [AuthGuard] },
+  { path: 'create-rental', component: RentalCreateComponent},
   { path: 'rentals', component: RentalListComponent },
   { path: 'component-test', component: ComponentTestComponent },
   { path: 'login', component: AuthenticationComponent },

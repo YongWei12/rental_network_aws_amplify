@@ -1,4 +1,10 @@
  
+ <amplify-authenticator>
+  <ng-template
+  amplifySlot="authenticated"
+  let-user="user"
+  let-signOut="signOut"
+  >
     <div>
       <!-- <a routerLink="/">Home</a>
       <a routerLink="/create-rental">Create Rental</a>
@@ -8,3 +14,5 @@
       <!-- Keep the router-outlet directive here -->
       <router-outlet></router-outlet>
     </div>
+    </ng-template>
+  </amplify-authenticator>
