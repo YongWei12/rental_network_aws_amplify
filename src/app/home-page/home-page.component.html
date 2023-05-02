@@ -1,69 +1,65 @@
-<!-- <app-restaurants></app-restaurants>
-<p>home-page works!</p> -->
-
-
 <!-- Pre Loader -->
 <div id="aa-preloader-area">
-    <div class="pulse"></div>
+  <div class="pulse"></div>
 </div>
-  <!-- SCROLL TOP BUTTON -->
-    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
-  <!-- END SCROLL TOP BUTTON -->
-  
-  <!-- Start header section -->
-  <header id="aa-header">  
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-header-area">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="aa-header-left">
-                  <div class="aa-telephone-no" *ngIf="userType === 'A'">
-                    <span class="fa fa-phone"></span>
-                    1-***-***-***
-                  </div>
-                  <div class="aa-email hidden-xs" *ngIf="userType === 'A'">
-                    <span class="fa fa-envelope-o"></span> ****@gmail.com
-                  </div>
-                </div>              
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="aa-header-right">
-                  <!-- <a href="#" class="aa-register" (click)="registerFrmNav()">Register</a>
-                  <a href="#" class="aa-login" (click)="loginDialog()">Login</a> -->
-                  <p class="aa-login">Welcome back, {{user.username}}</p>
+<!-- SCROLL TOP BUTTON -->
+<a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+<!-- END SCROLL TOP BUTTON -->
+
+<!-- Start header section -->
+<header id="aa-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-header-area">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <div class="aa-header-left">
+                <div class="aa-telephone-no" *ngIf="userType === 'A'">
+                  <span class="fa fa-phone"></span>
+                  1-***-***-***
                 </div>
+                <div class="aa-email hidden-xs" *ngIf="userType === 'A'">
+                  <span class="fa fa-envelope-o"></span> ****@gmail.com
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <div class="aa-header-right">
+                <!-- <a href="#" class="aa-register" (click)="registerFrmNav()">Register</a>
+                  <a href="#" class="aa-login" (click)="loginDialog()">Login</a> -->
+                <p class="aa-login">Welcome back, {{user.username}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
-  <!-- End header section -->
-  
-  <!-- Start menu section -->
-  <section id="aa-menu-area">
-    <nav class="navbar navbar-default main-navbar" role="navigation">  
-      <div class="container">
-        <div class="navbar-header">
-          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- LOGO -->                                               
-          <!-- Text based logo -->
-           <a class="navbar-brand aa-logo" href="#"> Home <span>Property</span></a>
-           
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li class="active"><a href="#">HOME</a></li>
-             <!-- <li class="dropdown">
+  </div>
+</header>
+<!-- End header section -->
+
+<!-- Start menu section -->
+<section id="aa-menu-area">
+  <nav class="navbar navbar-default main-navbar" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- LOGO -->
+        <!-- Text based logo -->
+        <a class="navbar-brand aa-logo" href="#"> The <span>Rental Network</span></a>
+
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
+          <li class="active"><a href="#">HOME</a></li>
+          <!-- <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROPERTIES <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">                
                 <li><a href="#">PROPERTIES</a></li>
@@ -78,179 +74,168 @@
                 <li><a href="#">BLOG DETAILS</a></li>                                            
               </ul>
             </li> -->
-            <li *ngIf="userType !== 'A'">
-              <a routerLink="/" (click)="nonAuth()">Create Rental</a>
-            </li>
-            <li *ngIf="userType === 'A'">
-              <a routerLink="/create-rental">Create Rental</a>
-            </li>
-           <li><a routerLink="/rentals">Rentals</a></li>
-           <!-- <li><a routerLink="/rentals">Rentals</a></li> -->
-           <!-- <li><a routerLink="/component-test">Rentals</a></li> -->
-           
-           <li><a routerLink="/user-profile">Profile</a></li>
-           <li><a href="#" (click)="signOut()">Sign Out</a></li>
-          </ul>                            
-        </div><!--/.nav-collapse -->       
-      </div>          
-    </nav> 
-  </section>
-  <!-- End menu section -->
-  
-  <!-- Start slider  -->
-  <section id="aa-slider">
-    <div class="aa-slider-area"> 
-      <!-- Top slider -->
-      <div class="aa-top-slider">
-        <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/3.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->
-        <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/2.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->
-        <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/1.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->       
-         <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/5.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->        
-         <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/4.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->
-         <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="assets/img/slider/6.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->
-      </div>
+          <li *ngIf="userType !== 'A'">
+            <a routerLink="/" (click)="nonAuth()">Create Rental</a>
+          </li>
+          <li *ngIf="userType === 'A'">
+            <a routerLink="/create-rental">Create Rental</a>
+          </li>
+          <li><a routerLink="/rentals">Rentals</a></li>
+          <!-- <li><a routerLink="/rentals">Rentals</a></li> -->
+          <!-- <li><a routerLink="/component-test">Rentals</a></li> -->
+
+          <li><a routerLink="/user-profile">Profile</a></li>
+          <li><a href="#" (click)="signOut()">Sign Out</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-  </section>
-  <!-- End slider  -->
-  
-  <!-- Advance Search -->
-  <section id="aa-advance-search">
-    <div class="container">
-      <div class="aa-advance-search-area">
-        <div class="form">
-         <div class="aa-advance-search-top">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Type Your Location">
-                </div>
+  </nav>
+</section>
+<!-- End menu section -->
+
+<!-- Start slider  -->
+<section id="aa-slider">
+  <div class="aa-slider-area">
+    <!-- Top slider -->
+    <div class="aa-top-slider">
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/3.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/2.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/1.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/5.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/4.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="assets/img/slider/6.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Duplex</span>
+          <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+          <span class="aa-top-slider-off">30% OFF</span>
+          <p class="aa-top-slider-price">$460,000</p>
+          <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+        </div>
+        <!-- / Top slider content -->
+      </div>
+      <!-- / Top slider single slide -->
+    </div>
+  </div>
+</section>
+<!-- End slider  -->
+
+<!-- Advance Search -->
+<section id="aa-advance-search">
+  <div class="container">
+    <div class="aa-advance-search-area">
+      <div class="form">
+        <div class="aa-advance-search-top">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="aa-single-advance-search">
+                <input type="text" pInputText placeholder="Type Your Location">
               </div>
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <select>
-                   <option value="0" selected>Category</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-                </div>
+            </div>
+            <div class="col-md-2">
+              <div class="aa-single-advance-search">
+                <select>
+                  <option value="0" selected>Category</option>
+                  <option value="1">Flat</option>
+                  <option value="2">Land</option>
+                  <option value="3">Plot</option>
+                  <option value="4">Commercial</option>
+                </select>
               </div>
-              <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
+            </div>
+            <div class="col-md-2">
+              <div class="aa-single-advance-search">
+                <select>
+                  <option value="0" selected>Type</option>
+                  <option value="1">Flat</option>
+                  <option value="2">Land</option>
+                  <option value="3">Plot</option>
+                  <option value="4">Commercial</option>
+                </select>
               </div>
-              </div>
-              <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-              </div>
-              </div>
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <input class="aa-search-btn" type="submit" value="Search">
-                </div>
+            </div>
+            <div class="col-md-2">
+              <div class="aa-single-advance-search">
+                <input class="aa-search-btn" type="submit" value="Search">
               </div>
             </div>
           </div>
-         <div class="aa-advance-search-bottom">
-           <div class="row">
+        </div>
+        <div class="aa-advance-search-bottom">
+          <div class="row">
             <div class="col-md-6">
               <div class="aa-single-filter-search">
                 <span>AREA (SQ)</span>
@@ -259,7 +244,7 @@
                 <span>TO</span>
                 <span id="skip-value-upper" class="example-val">100.00</span>
                 <div id="aa-sqrfeet-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                </div>                  
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -270,44 +255,6 @@
                 <span>TO</span>
                 <span id="skip-value-upper2" class="example-val">100.00</span>
                 <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                </div>      
-              </div>
-            </div>
-          </div>  
-         </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Advance Search -->
-  
-  <!-- About us -->
-  <section id="aa-about-us">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-about-us-area">
-            <div class="row">
-              <div class="col-md-5">
-                <div class="aa-about-us-left">
-                  <img src="assets/img/about-us.png" alt="image">
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="aa-about-us-right">
-                  <div class="aa-title">
-                    <h2>About Us</h2>
-                    <span></span>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ab dignissimos vitae maxime adipisci blanditiis rerum quae quos! Id at rerum maxime modi fugit vero corrupti, ad atque sit laborum ipsum sunt blanditiis suscipit odio, aut nostrum assumenda nobis rem a maiores temporibus non commodi laboriosam, doloremque expedita! Corporis, provident?</p>                  
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>                    
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -315,252 +262,307 @@
         </div>
       </div>
     </div>
-  </section>
-  <!-- / About us -->
+  </div>
+</section>
+<!-- / Advance Search -->
 
-
-  <!-- Latest property -->
-<section id="aa-latest-property">
-    <div class="container">
-      <div class="aa-latest-property-area">
-        <div class="aa-title">
-          <h2>Latest Properties</h2>
-          <span></span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>         
-        </div>
-        <div class="aa-latest-properties-content">
+<!-- About us -->
+<section id="aa-about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-about-us-area">
           <div class="row">
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/1.jpg" alt="img">
-                </a>
-                <div class="aa-tag for-sale">
-                  For Sale
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $35000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
+            <div class="col-md-5">
+              <div class="aa-about-us-left">
+                <img src="assets/img/about-us.png" alt="image">
+              </div>
             </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/2.jpg" alt="img">
-                </a>
-                <div class="aa-tag for-rent">
-                  For Rent
+            <div class="col-md-7">
+              <div class="aa-about-us-right">
+                <div class="aa-title">
+                  <h2>About Us</h2>
+                  <span></span>
                 </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $11000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/3.jpg" alt="img">
-                </a>
-                <div class="aa-tag sold-out">
-                  Sold Out
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $15000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/4.jpg" alt="img">
-                </a>
-                <div class="aa-tag for-sale">
-                  For Sale
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $35000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/5.jpg" alt="img">
-                </a>                
-                <div class="aa-tag sold-out">
-                  Sold Out
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $11000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="assets/img/item/6.jpg" alt="img">
-                </a>
-                <div class="aa-tag for-rent">
-                  For Rent
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $15000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
+                <p>Welcome to TheRentalNetwork! We are a team of dedicated individuals
+                  who share a passion for providing an exceptional rental experience to our customers.</p>
+                <ul>
+                  <li>At our rental website, we aim to connect renters with the perfect rental property
+                    that meets their unique needs and preferences. We offer a wide range of rental
+                    properties, from cozy apartments to spacious houses, in various locations to
+                    suit different lifestyles and budgets.</li>
+                  <li>Our team of experts is committed to ensuring that our customers have a seamless
+                    rental experience. We work tirelessly to provide accurate information about our
+                    rental properties, including detailed descriptions and photos, so that renters
+                    can make informed decisions.</li>
+                  <li>We believe that finding the right rental property should be stress-free and
+                    enjoyable. That's why we go the extra mile to make sure that our customers
+                    receive excellent customer service and support throughout the rental process.
+                    Whether you're a first-time renter or an experienced tenant, we are here to
+                    assist you every step of the way.</li>
+                  <li>Thank you for choosing our rental website as your preferred rental platform.
+                    We look forward to serving you and helping you find your dream rental property.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Latest property -->
-  
-  <!-- Service section -->
-  <section id="aa-service">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-service-area">
-            <div class="aa-title">
-              <h2>Our Service</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
-            </div>
-            <!-- service content -->
-            <div class="aa-service-content">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="aa-single-service">
-                    <div class="aa-service-icon">
-                      <span class="fa fa-home"></span>
-                    </div>
-                    <div class="aa-single-service-content">
-                      <h4><a href="#">Property Sale</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
-                    </div>
+  </div>
+</section>
+<!-- / About us -->
+
+
+<!-- Latest property -->
+<section id="aa-latest-property">
+  <div class="container">
+    <div class="aa-latest-property-area">
+      <div class="aa-title">
+        <h2>Latest Properties</h2>
+        <span></span>
+        <p>Take a moment to browse through our latest property listings and discover your dream rental today!</p>
+      </div>
+      <div class="aa-latest-properties-content">
+        <div class="row">
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/1.jpg" alt="img">
+              </a>
+              <div class="aa-tag for-sale">
+                For Sale
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $35000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/2.jpg" alt="img">
+              </a>
+              <div class="aa-tag for-rent">
+                For Rent
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $11000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/3.jpg" alt="img">
+              </a>
+              <div class="aa-tag sold-out">
+                Sold Out
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $15000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/4.jpg" alt="img">
+              </a>
+              <div class="aa-tag for-sale">
+                For Sale
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $35000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/5.jpg" alt="img">
+              </a>
+              <div class="aa-tag sold-out">
+                Sold Out
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $11000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="assets/img/item/6.jpg" alt="img">
+              </a>
+              <div class="aa-tag for-rent">
+                For Rent
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>5 Rooms</span>
+                  <span>2 Beds</span>
+                  <span>3 Baths</span>
+                  <span>1100 SQ FT</span>
+                </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">Appartment Title</a></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                </div>
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    $15000
+                  </span>
+                  <a href="#" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Latest property -->
+
+<!-- Service section -->
+<section id="aa-service">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-service-area">
+          <div class="aa-title">
+            <h2>Our Service</h2>
+            <span></span>
+            <p>Our core services include property management, rental property marketing, tenant screening,
+              lease preparation, rent collection, and maintenance coordination, providing a comprehensive
+              solution for all your rental property needs.</p>
+          </div>
+          <!-- service content -->
+          <div class="aa-service-content">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="aa-single-service">
+                  <div class="aa-service-icon">
+                    <span class="fa fa-home"></span>
+                  </div>
+                  <div class="aa-single-service-content">
+                    <h4><a href="#">Property Rental</a></h4>
+                    <p>Utilize our extensive network and marketing strategies to find reliable and
+                      qualified renters for your properties, ensuring a steady stream of rental income.</p>
                   </div>
                 </div>
-                <div class="col-md-3">
-                  <div class="aa-single-service">
-                    <div class="aa-service-icon">
-                      <span class="fa fa-check"></span>
-                    </div>
-                    <div class="aa-single-service-content">
-                      <h4><a href="#">Property Rent</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
-                    </div>
+              </div>
+              <div class="col-md-3">
+                <div class="aa-single-service">
+                  <div class="aa-service-icon">
+                    <span class="fa fa-check"></span>
+                  </div>
+                  <div class="aa-single-service-content">
+                    <h4><a href="#">Ease Free</a></h4>
+                    <p>Our user-friendly platform streamlines the management of your rental properties,
+                      providing an all-in-one solution for rent collection, maintenance requests, and
+                      communication with tenants for a hassle-free experience.</p>
                   </div>
                 </div>
-                <div class="col-md-3">
-                  <div class="aa-single-service">
-                    <div class="aa-service-icon">
-                      <span class="fa fa-crosshairs"></span>
-                    </div>
-                    <div class="aa-single-service-content">
-                      <h4><a href="#">Property Development</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
-                    </div>
+              </div>
+              <div class="col-md-3">
+                <div class="aa-single-service">
+                  <div class="aa-service-icon">
+                    <span class="fa fa-crosshairs"></span>
+                  </div>
+                  <div class="aa-single-service-content">
+                    <h4><a href="#">Property Management</a></h4>
+                    <p>Let us handle the day-to-day operations and management of your rental properties,
+                      ensuring maximum occupancy rates, timely rent payments, and overall peace of mind.</p>
                   </div>
                 </div>
-                <div class="col-md-3">
-                  <div class="aa-single-service">
-                    <div class="aa-service-icon">
-                      <span class="fa fa-bar-chart-o"></span>
-                    </div>
-                    <div class="aa-single-service-content">
-                      <h4><a href="#">Market Analysis</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
-                    </div>
+              </div>
+              <div class="col-md-3">
+                <div class="aa-single-service">
+                  <div class="aa-service-icon">
+                    <span class="fa fa-bar-chart-o"></span>
+                  </div>
+                  <div class="aa-single-service-content">
+                    <h4><a href="#">Market Analysis</a></h4>
+                    <p>Our comprehensive market analysis on rental properties provides valuable insights
+                      and data to help you make informed decisions on pricing, property features, and
+                      location for your rental investment.</p>
                   </div>
                 </div>
               </div>
@@ -569,305 +571,171 @@
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Service section -->
-  
-  <!-- Promo Banner Section -->
-  <section id="aa-promo-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-promo-banner-area">
-            <h3>Find Your Best Property</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ex illum corporis quibusdam numquam quisquam optio explicabo. Officiis odit quia odio dignissimos eius repellat id!</p>
-            <a href="#" class="aa-view-btn">View Details</a>
-          </div>
+  </div>
+</section>
+<!-- / Service section -->
+
+<!-- Promo Banner Section -->
+<section id="aa-promo-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-promo-banner-area">
+          <h3>Find Your Best Property</h3>
+          <p>Partner with us to find your perfect rental property, as we offer a
+            diverse range of properties, professional guidance, and exceptional customer
+            service to make your rental search a stress-free and enjoyable experience.</p>
+          <a href="#" class="aa-view-btn">View Details</a>
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Promo Banner Section -->
-  
-  <!-- Our Agent Section-->
-  <section id="aa-agents">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-agents-area">
-            <div class="aa-title">
-              <h2>Our Agents</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
-            </div>
-            <!-- agents content -->
-            <div class="aa-agents-content">
-              <ul class="aa-agents-slider">
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-1.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Philip Smith</a></h4>
-                      <span>Top Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-5.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Adam Barney</a></h4>
-                      <span>Expert Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-3.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Paul Walker</a></h4>
-                      <span>Director</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-4.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">John Smith</a></h4>
-                      <span>Jr. Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                 <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-1.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Philip Smith</a></h4>
-                      <span>Top Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-5.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Adam Barney</a></h4>
-                      <span>Expert Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-3.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Paul Walker</a></h4>
-                      <span>Director</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="assets/img/agents/agent-4.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">John Smith</a></h4>
-                      <span>Jr. Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+  </div>
+</section>
+<!-- / Promo Banner Section -->
+
+<!-- Our Agent Section-->
+<section id="aa-agents">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-agents-area">
+          <div class="aa-title">
+            <h2>Our Agents</h2>
+            <span></span>
+            <p>This is our dedicated team managing the rental website, with years of experience 
+              in the real estate industry and a passion for providing exceptional customer 
+              service and expertise to help clients find their perfect rental property.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Our Agent Section-->
-  
-  <!-- Client Testimonial -->
-  <section id="aa-client-testimonial">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-client-testimonial-area">
-            <div class="aa-title">
-              <h2>What Client Say</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eaque quas debitis animi ipsum, veritatis!</p>
-            </div>
-            <!-- testimonial content -->
-            <div class="aa-testimonial-content">
-              <!-- testimonial slider -->
-              <ul class="aa-testimonial-slider">
-                <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="assets/img/testimonial-1.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>Therichpost</p>
-                      <span>Web Designer</span>
+          <!-- agents content -->
+          <div class="aa-agents-content">
+            <ul class="aa-agents-slider">
+              <li>
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents1.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">Samantha</a></h4>
+                    <span>Marketing Manager</span>
+                    <p>Samantha is responsible for creating and implementing marketing 
+                      campaigns to attract potential renters to the website. She uses 
+                      her expertise in digital marketing and SEO to ensure that the 
+                      website ranks highly in search engine results and reaches a 
+                      broad audience.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
                     </div>
                   </div>
-                </li>
-                 <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="assets/img/testimonial-3.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>Therichpost</p>
-                      <span>Web Designer</span>
+                </div>
+              </li>
+              <li>
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents2.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">Alex</a></h4>
+                    <span>UX Designer</span>
+                    <p>As the UX designer, Alex is responsible for creating a user-friendly 
+                      website interface that allows renters to easily search and find the 
+                      perfect rental property. He works closely with the development team 
+                      to implement new features and optimize the website's functionality.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
                     </div>
                   </div>
-                </li>
-                 <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="assets/img/testimonial-2.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>Therichpost</p>
-                      <span>Web Designer</span>
+                </div>
+              </li>
+              <li>
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents3.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">Maria</a></h4>
+                    <span>Rental Agent</span>
+                    <p>Maria is a rental agent who works directly with clients to help them 
+                      find the perfect rental property. She uses her extensive knowledge of 
+                      the local real estate market to provide expert advice and guidance to 
+                      clients throughout the rental process.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
                     </div>
                   </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Client Testimonial -->
-  
-  <!-- Client brand -->
-  <section id="aa-client-brand">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-client-brand-area">
-            <ul class="aa-client-brand-slider">
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-1.png" alt="brand image">
                 </div>
               </li>
               <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-2.png" alt="brand image">
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents4.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">John</a></h4>
+                    <span>Web Developer</span>
+                    <p>John is a web developer who works on the technical aspects 
+                      of the rental website. He is responsible for maintaining the 
+                      website's functionality, fixing bugs, and implementing new 
+                      features to improve the user experience.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-3.png" alt="brand image">
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents5.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">Laura</a></h4>
+                    <span>Customer Service Representative</span>
+                    <p>Laura is a customer service representative who provides exceptional 
+                      customer support to clients who have questions or issues related to 
+                      the rental process. She uses her excellent communication skills and 
+                      in-depth knowledge of the website to ensure that clients have a 
+                      positive experience.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-5.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-4.png" alt="brand image">
-                </div>
-              </li>
-               <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-1.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-2.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-3.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-5.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="assets/img/client-brand-4.png" alt="brand image">
+                <div class="aa-single-agents">
+                  <div class="aa-agents-img">
+                    <img src="assets/img/agents/agents6.png" alt="agent member image">
+                  </div>
+                  <div class="aa-agetns-info">
+                    <h4><a href="#">Peter</a></h4>
+                    <span>Property Manager</span>
+                    <p>Peter is a property manager who works with landlords to ensure 
+                      that their rental properties are listed accurately on the website. 
+                      He uses his expertise in property management to help landlords 
+                      maximize their rental income and maintain their properties to 
+                      a high standard.</p>
+                    <div class="aa-agent-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -875,93 +743,264 @@
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Client brand -->
-  
-  <!-- Latest blog -->
-  <section id="aa-latest-blog">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-latest-blog-area">
-            <div class="aa-title">
-              <h2>Latest News</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe magni, est harum repellendus. Accusantium, nostrum!</p>
-            </div>
-            <div class="aa-latest-blog-content">
-              <div class="row">
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="assets/img/blog-img-1.jpg" alt="img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
+  </div>
+</section>
+<!-- / Our Agent Section-->
+
+<!-- Client Testimonial -->
+<section id="aa-client-testimonial">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-client-testimonial-area">
+          <div class="aa-title">
+            <h2>What Client Say</h2>
+            <span></span>
+            <p>Our clients have consistently praised our rental website for its
+              user-friendly interface, comprehensive property listings, and exceptional
+              customer service, making their rental search a stress-free and enjoyable
+              experience.</p>
+          </div>
+          <!-- testimonial content -->
+          <div class="aa-testimonial-content">
+            <!-- testimonial slider -->
+            <ul class="aa-testimonial-slider">
+              <li>
+                <div class="aa-testimonial-single">
+                  <div class="aa-testimonial-img">
+                    <img src="assets/img/testimonial/testimonial1.png" alt="testimonial img">
+                  </div>
+                  <div class="aa-testimonial-info">
+                    <p>I couldn't have been happier with my experience using this rental website.
+                      The platform was easy to navigate and provided a comprehensive range of
+                      properties to choose from. The team was incredibly helpful throughout the
+                      entire process, answering all my questions promptly and ensuring a seamless
+                      rental experience. I highly recommend this website to anyone searching for
+                      their dream rental property.</p>
+                  </div>
+                  <div class="aa-testimonial-bio">
+                    <p>John Smith</p>
+                    <span>Accountant</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="aa-testimonial-single">
+                  <div class="aa-testimonial-img">
+                    <img src="assets/img/testimonial/testimonial2.png" alt="testimonial img">
+                  </div>
+                  <div class="aa-testimonial-info">
+                    <p>I have been using this rental website for several years now, and
+                      I am continuously impressed by the level of service and support
+                      provided by the team. They go above and beyond to ensure that my
+                      rental properties are occupied with reliable tenants, and they
+                      handle all the day-to-day management tasks with efficiency and
+                      professionalism. I highly recommend this website to any landlord
+                      looking for a stress-free and lucrative rental investment.</p>
+                  </div>
+                  <div class="aa-testimonial-bio">
+                    <p>Sarah Lee</p>
+                    <span>Marketing Manager</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="aa-testimonial-single">
+                  <div class="aa-testimonial-img">
+                    <img src="assets/img/testimonial/testimonial3.png" alt="testimonial img">
+                  </div>
+                  <div class="aa-testimonial-info">
+                    <p>Thanks to this rental website, I was able to find the perfect
+                      rental property that met all of my unique needs and preferences.
+                      The platform provided detailed property information and photos,
+                      making it easy to compare and contrast different options. The
+                      team was incredibly helpful and responsive, ensuring that I had
+                      all the information I needed to make an informed decision. I
+                      highly recommend this website to anyone searching for their
+                      next rental property.</p>
+                  </div>
+                  <div class="aa-testimonial-bio">
+                    <p>David Chen</p>
+                    <span>Software Developer</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Client Testimonial -->
+
+<!-- Client brand -->
+<section id="aa-client-brand">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-client-brand-area">
+          <ul class="aa-client-brand-slider">
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-1.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-2.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-3.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-5.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-4.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-1.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-2.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-3.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-5.png" alt="brand image">
+              </div>
+            </li>
+            <li>
+              <div class="aa-client-single-brand">
+                <img src="assets/img/client-brand-4.png" alt="brand image">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Client brand -->
+
+<!-- Latest blog -->
+<section id="aa-latest-blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-latest-blog-area">
+          <div class="aa-title">
+            <h2>Latest News</h2>
+            <span></span>
+            <p>Stay up-to-date with the latest property news by regularly visiting our
+              rental website, where we offer informative articles, news updates, and
+              expert insights on the real estate market.</p>
+          </div>
+          <div class="aa-latest-blog-content">
+            <div class="row">
+              <!-- start single blog -->
+              <div class="col-md-4">
+                <article class="aa-blog-single">
+                  <figure class="aa-blog-img">
+                    <a href="#"><img src="assets/img/news/news1.jpg" alt="img"></a>
+                    <span class="aa-date-tag">01 April, 23</span>
+                  </figure>
+                  <div class="aa-blog-single-content">
+                    <h3><a href="#">Rental Housing Prices Soar in Urban Areas</a></h3>
+                    <p>The demand for rental housing in urban areas has skyrocketed,
+                      leading to a significant increase in rental prices. With more
+                      people seeking the convenience and amenities of city living,
+                      landlords have been able to capitalize on the high demand and
+                      raise prices accordingly. As a result, many renters are finding
+                      it increasingly difficult to afford rental housing in urban areas.</p>
+                    <div class="aa-blog-single-bottom">
+                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
+                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
                     </div>
-                   
-                  </article>
-                </div>
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="assets/img/blog-img-2.jpg" alt="img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
-                    </div>                   
-                  </article>
-                </div>
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="assets/img/blog-img-3.jpg" alt="img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
-                    </div>                   
-                  </article>
-                </div>
+                  </div>
+
+                </article>
+              </div>
+              <!-- start single blog -->
+              <div class="col-md-4">
+                <article class="aa-blog-single">
+                  <figure class="aa-blog-img">
+                    <a href="#"><img src="assets/img/news/news2.jpg" alt="img"></a>
+                    <span class="aa-date-tag">10 April, 23</span>
+                  </figure>
+                  <div class="aa-blog-single-content">
+                    <h3><a href="#">Rental Housing Supply Increases in Suburban Markets</a></h3>
+                    <p>As rental prices continue to climb in urban areas, many renters
+                      are seeking more affordable options in suburban markets. This has
+                      led to an increase in the supply of rental housing in suburban areas,
+                      as landlords respond to the growing demand. This trend is expected to
+                      continue, with suburban rental markets projected to experience significant
+                      growth in the coming years.</p>
+                    <div class="aa-blog-single-bottom">
+                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
+                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- start single blog -->
+              <div class="col-md-4">
+                <article class="aa-blog-single">
+                  <figure class="aa-blog-img">
+                    <a href="#"><img src="assets/img/news/news3.jpg" alt="img"></a>
+                    <span class="aa-date-tag">23 April, 23</span>
+                  </figure>
+                  <div class="aa-blog-single-content">
+                    <h3><a href="#">Rental Housing Industry Adapts to New Trends in Remote Work</a></h3>
+                    <p>With more people working from home due to the COVID-19 pandemic, the rental
+                      housing industry has had to adapt to new trends in remote work. Many renters
+                      are now seeking rental properties with home office spaces and reliable internet
+                      connections, while landlords are increasingly offering flexible lease terms and
+                      virtual property tours to accommodate remote renters. These trends are expected
+                      to continue even after the pandemic subsides, as remote work becomes a more
+                      permanent feature of the workforce.</p>
+                    <div class="aa-blog-single-bottom">
+                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
+                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Latest blog -->
-  
-  <!-- Footer -->
-  <footer id="aa-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+  </div>
+</section>
+<!-- / Latest blog -->
+
+<!-- Footer -->
+<footer id="aa-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
         <div class="aa-footer-area">
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="aa-footer-left">
-               <p>Designed by <a rel="nofollow" href="#">Love</a></p>
+                <p>Designed by <a rel="nofollow" href="#">Love</a></p>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -980,24 +1019,23 @@
                 <a href="#">FAQ</a>
                 <a href="#">Privacy & Term</a>
               </div>
-            </div>            
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </div>
-  </footer>
-  <!-- / Footer -->
+  </div>
+</footer>
+<!-- / Footer -->
 
-  <p-toast [baseZIndex]="5000" [preventOpenDuplicates]="true">
-    <ng-template let-message pTemplate="message">
-      <!-- <div class="mr-3">
+<p-toast [baseZIndex]="5000" [preventOpenDuplicates]="true">
+  <ng-template let-message pTemplate="message">
+    <!-- <div class="mr-3">
         <i [ngClass]="message.severity == 'success' ? 'fa-check-circle success-icon' : message.severity == 'error' ? 'fa-exclamation-circle fail-icon' : 'fa-solid fa-circle-info info-icon' " class="fas fa-check-circle fa-lg mt-1"></i>
       </div> -->
-      <div class="w-full">
-        <div class="text-lg">{{message.summary}}</div>
-        <div class="text-lg">{{message.detail}}</div>
-      </div>
-    </ng-template>
-  </p-toast>
-  
+    <div class="w-full">
+      <div class="text-lg">{{message.summary}}</div>
+      <div class="text-lg">{{message.detail}}</div>
+    </div>
+  </ng-template>
+</p-toast>

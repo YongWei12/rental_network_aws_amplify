@@ -18,7 +18,7 @@ import { ComponentTestComponent } from './component-test/component-test.componen
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
+// Angular Materials Modules
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -26,18 +26,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { LoginPageComponent } from './login-page/login-page.component';
+
+// Prime NG Modules
 import { DialogService } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
+import { DropdownModule } from 'primeng/dropdown';
+
+import { LoginPageComponent } from './login-page/login-page.component';
 import { RentalListDetailsComponent } from './rental-list/rental-list-details/rental-list-details.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
-
 
 @NgModule({
   declarations: [
@@ -73,6 +76,7 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     MessagesModule,
     MessageModule,
     ToastModule,
+    DropdownModule
   ],
   providers: [DialogService,MessageService,],
   bootstrap: [AppComponent]

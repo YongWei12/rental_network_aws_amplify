@@ -9,8 +9,7 @@ import { RegisterPageComponent } from '../register-page/register-page.component'
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
-  // providers: [DialogService]
+  styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
 
@@ -22,21 +21,24 @@ export class HomePageComponent {
     private router: Router,
     private dialogService: DialogService,
     private messageService: MessageService,) {
-      this.onCreate('');
-      console.log(this.user);
-    }
+    this.onCreate('');
+    console.log(this.user);
+  }
 
-    async onCreate(rentalData: any) {
-      this.user = await Auth.currentAuthenticatedUser();
-      console.log("user in the function", this.user.username);
-    }
-  
+  async onCreate(rentalData: any) {
+    this.user = await Auth.currentAuthenticatedUser();
+    console.log("user in the function", this.user.username);
+  }
+
   async signOut() {
     try {
       await Auth.signOut();
     } catch (error) {
       console.log('Error signing out:', error);
     }
+  }
+
+  ngOnInit(): void {
   }
 
   loginDialog(): void {
@@ -52,16 +54,16 @@ export class HomePageComponent {
 
     ref.onClose.subscribe((msg: string) => {
       console.log(msg);
-      if(msg === 'registerPage'){
+      if (msg === 'registerPage') {
         this.registerPage();
       }
-      else if(msg === 'login success'){
+      else if (msg === 'login success') {
         this.userType = 'A';
-          this.messageService.add({
+        this.messageService.add({
           summary: 'Login', severity: 'success', life: 5000, detail: 'Login Successfully', closable: false
         });
       }
-      else if(msg === 'login failed'){
+      else if (msg === 'login failed') {
         this.messageService.add({
           summary: 'Login', severity: 'error', life: 5000, detail: 'Login Failed', closable: false
         });
@@ -81,9 +83,9 @@ export class HomePageComponent {
     });
 
     ref.onClose.subscribe((msg: string) => {
-      if(msg === 'registered') {
+      if (msg === 'registered') {
         this.messageService.add({
-          summary: 'New User', severity: 'success', detail: 'You have registered successfully', closable: false 
+          summary: 'New User', severity: 'success', detail: 'You have registered successfully', closable: false
         })
       }
     })
