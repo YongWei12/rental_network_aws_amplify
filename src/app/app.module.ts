@@ -36,6 +36,7 @@ import { ToastModule } from 'primeng/toast';
 import { RentalListDetailsComponent } from './rental-list/rental-list-details/rental-list-details.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ProductDescriptionComponent } from './product-description/product-description.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RegisterPageComponent,
     RentalListDetailsComponent,
     AuthenticationComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ProductDescriptionComponent
   ],
   imports: [
     BrowserModule,

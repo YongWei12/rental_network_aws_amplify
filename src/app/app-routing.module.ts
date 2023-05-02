@@ -9,6 +9,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { AuthGuard } from './authentication/auth.guard';
 import{AuthenticationComponent} from './authentication/authentication.component'
 import {UserProfileComponent} from './user-profile/user-profile.component'
+import {ProductDescriptionComponent} from './product-description/product-description.component'
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'component-test', component: ComponentTestComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'user-profile', component: UserProfileComponent },
+  { path: 'product-description/:title/:description/:photoUrl/:price/:availability', component: ProductDescriptionComponent },
   // { path: 'login-page', component: LoginPageComponent}
 ];
 

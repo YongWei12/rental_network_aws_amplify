@@ -3,6 +3,7 @@ import { APIService } from '../API.service';
 import { Rental } from '../API.service';
 import { Storage, Auth } from 'aws-amplify';
 import { DialogService } from 'primeng/dynamicdialog';
+import {Router } from '@angular/router';
 import { RentalListDetailsComponent } from './rental-list-details/rental-list-details.component';
 
 @Component({
@@ -17,7 +18,8 @@ export class RentalListComponent implements OnInit {
   public rentals: Array<Rental> = [];
 
   constructor(private api: APIService,
-    private dialogService: DialogService,) {}
+    private dialogService: DialogService,
+    private router: Router) {}
 
 
   public signedPhotoUrls: { [key: string]: string } = {};
@@ -66,15 +68,29 @@ export class RentalListComponent implements OnInit {
     console.log("view details");
     console.log(id);
     // this.getRentalDetails(id);
-    const ref = this.dialogService.open(RentalListDetailsComponent, {
-      width: 'max-content',
-      height: 'max-content',
-      showHeader: false,
-      data: { data: id },
-      // contentStyle: { 'min-height': '500px', 'min-width': '500px' },
-      closable: true,
-      dismissableMask: true
-    });
+    let rental = this.rentals.find(rental => rental.id === id);
+    console.log(rental);
+    //navigate to product details page 
+    let title = rental.title;
+    let description = rental.description;
+    let photoUrls = rental.photo;
+    let price = rental.pricePerMonth;
+    let availability = "available";
+    console.log("my photo url");
+    console.log(rental.photo);
+    // Convert photoUrls array to string
+    let photoUrl = photoUrls.join(',');
+    this.router.navigate([`/product-description/${title}/${description}/${photoUrl}/${price}/${availability}`]);
+
+    // const ref = this.dialogService.open(RentalListDetailsComponent, {
+    //   width: 'max-content',
+    //   height: 'max-content',
+    //   showHeader: false,
+    //   data: { data: id },
+    //   // contentStyle: { 'min-height': '500px', 'min-width': '500px' },
+    //   closable: true,
+    //   dismissableMask: true
+    // });
   }
 
   // getRentalDetails(id: string): Rental {
