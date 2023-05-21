@@ -17,7 +17,6 @@ type Rental @model @auth(rules: [{allow: public}]) {
   noBeds: Float
   noBaths: Float
   saleStatus: String
-  username: String
   comment: [Comment]!
 }
 
@@ -107,6 +106,22 @@ enum RentalType {
   HOUSE
   SHORT_TERM
   SHORT_TERM_STAY
+}
+
+enum PaymentStatusType {
+  PENDING
+  AUTHORIZED
+  COMPLETED
+}
+
+enum BookingStatusType {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  PAYMENT_PENDING
+  PAYMENT_FAILED
+  REFUNDED
 }
 
 enum PreferredLanguageType {
