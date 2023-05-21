@@ -7,6 +7,7 @@ type Restaurant @model @auth(rules: [{allow: public}]) {
 
 type Rental @model @auth(rules: [{allow: public}]) {
   id: ID!
+  user: User!
   rentalType: RentalType!
   title: String!
   photo: [String]
@@ -17,6 +18,87 @@ type Rental @model @auth(rules: [{allow: public}]) {
   noBaths: Float
   saleStatus: String
   username: String
+  comment: [Comment]!
+}
+
+type Booking @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  bookingDate: AWSDateTime!
+  username: String!
+  userContact: Float
+  bookingStatus: String!
+  rentalType: RentalType!
+  startDate: AWSDateTime!
+  endDate: AWSDateTime!
+  paymentStatus: String!
+  paymentMethod: String!
+  totalPrice: Float!
+  notes: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String
+  password: String!
+  contactNumber: String
+  country: String!
+  preferredLanguageType: PreferredLanguageType!
+  bookingHistory: [Booking!]!
+  favourite: [Rental]!
+  review: [Review]!
+  notificationPeferenceType: NotificationPreferenceType!
+  loyalty: Loyalty
+  accountStatusType: AccountStatusType
+}
+
+type Review @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user: User!
+  rental: Rental
+  rating: Float!
+  title: String!
+  booking: Booking
+  dateSubmitted: AWSDateTime!
+  response: String
+  dateResponded: AWSDateTime
+  reviewCategoryType: ReviewCategoryType
+}
+
+type Loyalty @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user: User!
+  loyaltyType: LoyaltyType
+  pointsBalance: Float!
+  pointsEarned: Float!
+  pointsRedeemed: Float!
+  dateJoined: AWSDateTime!
+  dateExpired: AWSDateTime!
+}
+
+type News @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+  publicationDate: AWSDateTime!
+  newsCategoryType: NewsCategoryType
+  source: String
+  view: Float!
+  comment: [Comment]!
+}
+
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user: User!
+  rental: Rental
+  news: News
+  content: String!
+  dateCommented: AWSDateTime!
+  likes: Float!
+  dislikes: Float!
 }
 
 enum RentalType {
@@ -26,4 +108,64 @@ enum RentalType {
   SHORT_TERM
   SHORT_TERM_STAY
 }
- 
+
+enum NotificationPreferenceType {
+  EMAIL
+  SMS
+  PHONECALL
+  WHATSAPP
+  TELEGRAM
+}
+
+enum AccountStatusType {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING
+}
+
+enum ReviewCategoryType {
+  SERVICE
+  CLEANLINESS
+  FACILITIES
+  LOCATION
+  ROOM QUALITY
+  VALUE FOR MONEY
+  BOOKING PROCESS
+  COMMUNICATION
+  STAFF
+  NOISE LEVEL
+  ACCESSIBILITY
+  FOOD AND DINING
+  SECURITY
+  FACILITIES FOR CHILDREN
+  INTERNET CONNECTION
+  MISCELLANEOUS
+}
+
+enumb LoyaltyType {
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+  DIAMOND
+  ELITE
+  PREMIER
+}
+
+enum NewsCategoryType {
+  TRAVEL NEWS
+  ACCOMMODATION UPDATES 
+  EVENTS AND ACTIVITIES
+  DESTINATION GUIDES
+  TRAVEL TIPS AND ADVICE
+  PROMOTIONS AND DISCOUNTS
+  INDUSTRY NEWS
+  SUSTAINABILITY AND ECO-FRIENDLY INITIATIVES
+  EXPERT INTERVIEWS
+  SEASONAL NEWS
+  LOCAL CULTURE AND CUISINE
+  TRAVEL TECHNOLOGY
+  TRAVEL GUIDES AND ITINERARIES
+  PARTNERSHIP AND COLLABORATION ANNOUNCEMENTS
+}
